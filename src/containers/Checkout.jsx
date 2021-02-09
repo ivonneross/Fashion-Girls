@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import AppContext from '../context/AppContext';
 import '../styles/components/Checkout.css';
 
@@ -18,6 +19,10 @@ const Checkout = () => {
   }
 
   return (
+    <>
+    <Helmet>
+      <title>Lista de pedidos - Fashion Girls</title>
+      </Helmet>
     <div className="Checkout">
       <div className="Checkout-content">
         {cart.length > 0 ? <h3>Order List:</h3> : <h3>No Order...</h3>}
@@ -44,8 +49,9 @@ const Checkout = () => {
           </Link>
         </div>
       )}
-    </div>
-  );
+    </div>  
+    </> 
+  )
 }
 
 export default Checkout;
